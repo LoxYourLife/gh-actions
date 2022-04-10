@@ -1,0 +1,27 @@
+{
+  "name": "versiontest",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "repository": "github:LoxYourLife/gh-actions.git",
+  "scripts": {
+    "release:major": "changelog -M -a && node .github/release.js major false",
+    "release:minor": "changelog -m -a && node .github/release.js minor false",
+    "release:patch": "changelog -p -a && node .github/release.js patch false",
+    "prerelease:major": "node .github/release.js premajor true",
+    "prerelease:minor": "node .github/release.js preminor true",
+    "prerelease:patch": "node .github/release.js prepatch true",
+    "prerelease": "node .github/release.js prerelease true"
+  },
+  "author": "Ronald Marske",
+  "license": "ISC",
+  "config": {
+    "eslint": "--ignore-path .gitignore --cache --format=codeframe --max-warnings=0 \"{src,scripts,tests,.github}/**/*.{js,md,html}\" \"*.{js,md,html}\" \".*.{js,md,html}\"",
+    "prettier": "--ignore-path .gitignore --loglevel=warn \"{src,scripts,tests,.github}/**/*.{js,md,yml,json,html}\" \"*.{js,yml,json,html}\" \".*.{js,yml,json,html}\" \"!package-lock.json\""
+  },
+  "devDependencies": {
+    "generate-changelog": "1.8.0",
+    "read-ini-file": "3.0.1",
+    "write-ini-file": "3.0.2"
+  }
+}
