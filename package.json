@@ -1,6 +1,6 @@
 {
   "name": "loxberry-versiontest",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "description": "",
   "main": "index.js",
   "repository": "github:LoxYourLife/gh-actions.git",
@@ -8,9 +8,9 @@
     "release:major": "changelog -M -a && node .github/release.js major false",
     "release:minor": "changelog -m -a && node .github/release.js minor false",
     "release:patch": "changelog -p -a && node .github/release.js patch false",
-    "prerelease:major": "node .github/release.js major true",
-    "prerelease:minor": "node .github/release.js minor true",
-    "prerelease:patch": "node .github/release.js patch true"
+    "pre:major": "node .github/release.js major true",
+    "pre:minor": "node .github/release.js minor true",
+    "pre:patch": "node .github/release.js patch true"
   },
   "author": "Ronald Marske",
   "license": "ISC",
