@@ -1,6 +1,6 @@
 {
   "name": "loxberry-versiontest",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "",
   "main": "index.js",
   "repository": "github:LoxYourLife/gh-actions.git",
