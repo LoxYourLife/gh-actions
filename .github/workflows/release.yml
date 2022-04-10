@@ -21,8 +21,8 @@ jobs:
       - name: Install dependencies
         run: |
           npm ci
-          npm --prefix bin ci
-          npm --prefix devServer ci
+      #    npm --prefix bin ci
+      #    npm --prefix devServer ci
       - name: publish dev server
         if: contains(github.ref, 'rc') == false
         run: npm publish
