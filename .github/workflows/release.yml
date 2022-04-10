@@ -25,7 +25,7 @@ jobs:
       #    npm --prefix devServer ci
       - name: publish dev server
         if: contains(github.ref, 'rc') == false
-        run: npm publish
+        run: npm publish --tag latest
         #working-directory: ./devServer
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
