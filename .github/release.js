@@ -9,7 +9,7 @@ const isPrerelease = process.argv[3] == 'true';
 const updatePluginConfig = async () => {
   const pluginCfg = path.resolve(__dirname, '..', 'plugin.cfg');
   const plugin = await readIniFile(pluginCfg);
-  plugin.PLUGIN.VERSION = version;
+  plugin.PLUGIN.VERSION = version.replace('-rc.', '_');
   await writeIniFile(pluginCfg, plugin);
 };
 
@@ -75,7 +75,7 @@ const run = async () => {
     await updateReleaseCfg();
   }
 
-  //commit();
+  commit();
   console.log(`Created new Version: ${version}`);
 };
 
