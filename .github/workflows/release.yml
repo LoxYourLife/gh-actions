@@ -23,11 +23,18 @@ jobs:
           npm ci
           npm --prefix bin ci
           npm --prefix devServer ci
-      # - name: publish dev server
-      #   run: npm publish
-      #   working-directory: ./devServer
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      - name: publish dev server
+        if: contains(github.ref, 'rc') == false
+        run: npm publish
+        #working-directory: ./devServer
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      - name: publish dev server @next
+        if: contains(github.ref, 'rc')
+        run: npm publish --tag next
+        #working-directory: ./devServer
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
   release:
     name: Create Release
